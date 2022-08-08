@@ -1,19 +1,1728 @@
-/* ----- Шрифты ----- */
+// ----- Шрифты ---------------
 @import 'fonts';
 
-/* ----- Переменные ----- */
+// ----- Переменные -----------
 @import 'vars';
 
-/* ----- Mixin ----- */
+// ----- Mixin ----------------
 @import 'mixin';
 
-/* ----- Библиотеки ----- */
+// ----- Библиотеки -----------
 @import 'libs';
 
-/* ----- Сброс стилей ----- */
+// ----- Сброс стилей ---------
 @import 'reset';
 
-/* ----- Глобальные стили ----- */
+// ----- Глобальные стили -----
 @import 'global';
 
 
+//? ------------HEADER---------------
+.header {
+  padding: 40px 0;
+  font-family: $font-Roboto;
+  font-weight: 400;
+  background-color: $white;
+
+  @include r ($lg) {
+    padding: 30px 0;
+  }
+
+  @include r ($md) {
+    padding: 20px 0;
+  }
+
+  @include r ($sm) {
+    padding: 15px 0;
+  }
+
+  @include r ($xs) {
+    padding: 10px 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    margin-right: 120px;
+
+    @include r ($lg) {
+      margin-right: auto;
+    }
+
+    &__img {
+      @include r ($sm) {
+        display: none;
+      }
+
+      &--mobile {
+        display: none;
+
+        @include r ($sm) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .nav {
+    position: relative;
+    margin-right: auto;
+
+    @include r ($lg) {
+      margin-right: 0;
+    }
+
+    &__list {
+      display: flex;
+
+      @include r ($lg) {
+        position: fixed;
+        text-transform: none;
+        transform: translateY(-200%);
+        transition: transform 0.7s;
+        overflow: none;
+        z-index: 2;
+        background-color: #000;
+        width: 100%;
+        height: 100%;
+        color: #fff;
+        top: 0;
+        left: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &--active {
+          transform: translateY(0%)
+        }
+      }
+    }
+
+    &__item {
+      &:not(:last-child) {
+        margin-right: 40px;
+      }
+
+      @include r ($lg) {
+        text-align: center;
+        width: 100%;
+
+        &:not(:last-child) {
+          margin-right: 0;
+        }
+      }
+    }
+
+    &__link {
+      transition: color 0.4s,
+        text-decoration 0.4s;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:focus,
+      &:active {
+        color: $titleColor;
+      }
+
+      @include r ($lg) {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+      }
+    }
+  }
+
+  &__btn {
+    display: none;
+
+    @include r ($lg) {
+      background-color: #fff;
+      display: block;
+      position: relative;
+      z-index: 100;
+      width: 30px;
+      height: 22px;
+      transition: transform 0.3s ease 0s;
+      z-index: 100;
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        background-color: #000;
+        width: 100%;
+        height: 2px;
+        border-radius: 2px;
+        left: 0;
+      }
+
+      &:before {
+        top: 0;
+      }
+
+      &:after {
+        bottom: 0;
+      }
+
+      &--active:before {
+        transform: rotate(45deg);
+        top: 10px;
+      }
+
+      &--active:after {
+        transform: rotate(-45deg);
+        bottom: 10px;
+      }
+
+      &--active {
+        background-color: #000;
+        right: 0;
+
+        &:after,
+        &:before {
+          background-color: $white;
+        }
+
+        .header__line {
+          transform: scale(0);
+          background-color: #fff;
+        }
+      }
+    }
+  }
+
+  &__line {
+    @include r ($lg) {
+      position: absolute;
+      background-color: #000;
+      width: 100%;
+      height: 2px;
+      right: 0;
+      top: 10px;
+      border-radius: 2px;
+      transition: transform 0.3s ease 0s;
+    }
+  }
+}
+
+.cart {
+  border: 1px solid #D4D4D4;
+  border-radius: 33px;
+  padding: 7px;
+  padding-right: 24px;
+  display: flex;
+  align-items: center;
+
+  &__btn {
+    padding: 16px 15px;
+    background-color: $defaultColor;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  @include r ($lg) {
+    display: none;
+  }
+}
+//? ------------HEADER---------------
+
+//* ------------TOP------------------
+.top {
+  position: relative;
+  height: 913px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    background-image: url('../images/top-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left top;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  @include r ($xl) {
+    height: 800px;
+
+    &::before {
+      background-position: 60% 100%;
+    }
+  }
+
+  @include r ($lg) {
+    height: 600px;
+  }
+
+  @include r ($md) {
+    height: 500px;
+  }
+
+  @include r ($sm) {
+    height: 450px;
+  }
+
+  @include r ($xs) {
+    height: 400px;
+  }
+
+  &__inner {
+    padding-top: 220px;
+
+    @include r ($lg) {
+      padding-top: 150px;
+    }
+
+    @include r ($sm) {
+      padding-top: 100px;
+    }
+  }
+
+  .title {
+    margin-bottom: 14px;
+
+    @include r ($md) {
+      margin-bottom: 0;
+    }
+  }
+
+  .subtitle {
+    font-size: 70px;
+
+    @include r ($lg) {
+      font-size: 55px;
+    }
+
+    @include r ($md) {
+      font-size: 40px;
+    }
+
+    @include r ($md) {
+      font-size: 32px;
+    }
+
+    @include r ($xs) {
+      font-size: 30px;
+    }
+  }
+}
+//* ------------TOP------------------
+
+//* ------------BANNERS--------------
+.banners {
+  padding: 140px 0;
+
+  @include r ($lg) {
+    padding: 100px 0;
+  }
+
+  @include r ($md) {
+    padding: 70px 0;
+  }
+
+  @include r ($sm) {
+    padding: 40px 0;
+  }
+
+  @include r ($xs) {
+    padding: 25px 0;
+  }
+
+  &__items {
+    display: flex;
+
+    @include r ($xl) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    width: 665px;
+    height: fit-content;
+    border-radius: 30px;
+    background-repeat: no-repeat;
+
+    &:not(:last-child) {
+      margin-right: 50px;
+    }
+
+    @include r ($xl) {
+      background-size: cover;
+      width: 100%;
+
+      &:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
+    }
+
+    @include r ($sm) {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+
+    &--fruits {
+      .title {
+        color: $white;
+      }
+    }
+
+    &--vegatables {
+      .banners__subtitle {
+        color: $defaultColor;
+      }
+    }
+  }
+
+  &__item-inner {
+    padding: 105px 55px;
+
+    @include r ($lg) {
+      padding: 90px 50px;
+    }
+
+    @include r ($md) {
+      padding: 60px 40px;
+    }
+
+    @include r ($sm) {
+      padding: 45px 35px;
+    }
+
+    @include r ($xs) {
+      padding: 35px 35px;
+    }
+  }
+
+  &__subtitle {
+    width: 270px;
+    font-family: $font-Roboto;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 1.3;
+    color: $white;
+
+    @include r ($sm) {
+      max-width: 215px;
+      font-size: 32px;
+    }
+  }
+}
+//* ------------BANNERS--------------
+
+//* ------------ABOUT----------------
+.about {
+  padding: 120px 0 150px;
+  background-color: #F9F8F8;
+
+  @include r ($xl) {
+    padding: 80px 0;
+  }
+
+  @include r ($lg) {
+    padding: 60px 0;
+  }
+
+  @include r ($md) {
+    padding: 40px 0;
+  }
+
+  @include r ($sm) {
+    padding: 20px 0;
+  }
+
+  @include r ($xs) {
+    padding: 10px 0 20px;
+  }
+
+  &__wrapper {
+    display: flex;
+
+    @include r ($xl) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  &__img {
+    margin-right: 30px;
+
+    @include r ($xl) {
+      margin-right: 0;
+    }
+  }
+
+  &__text {
+    margin-bottom: 50px;
+    color: #525C60;
+    letter-spacing: normal;
+
+    @include r ($lg) {
+      margin-bottom: 30px;
+    }
+
+    @include r ($md) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__list {
+    margin-bottom: 50px;
+
+    @include r ($xl) {
+      margin-bottom: 70px;
+    }
+
+    @include r ($lg) {
+      margin-bottom: 40px;
+    }
+
+    @include r ($md) {
+      margin-bottom: 30px;
+    }
+
+    @include r ($sm) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 120px;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+
+      @include r ($md) {
+        margin-bottom: 20px;
+      }
+
+      @include r ($xs) {
+        margin-bottom: 10px;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-repeat: no-repeat;
+      left: 0;
+      top: 0;
+    }
+
+    &--organic {
+      &::after {
+        background-image: url('../images/icons/about-1.svg');
+      }
+    }
+
+    &--standarts {
+      &::after {
+        background-image: url('../images/icons/about-2.svg');
+      }
+    }
+  }
+
+  &__heading {
+    font-family: $font-Roboto;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 1.4;
+    margin-bottom: 9px;
+
+    @include r ($sm) {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__description {
+    letter-spacing: normal;
+    color: #525C60;
+  }
+}
+//* ------------ABOUT----------------
+
+//*-------------PRODUCTS-------------
+.products {
+  padding: 120px 0 140px;
+
+  @include r ($xl) {
+    padding: 80px 0;
+  }
+
+  @include r ($lg) {
+    padding: 60px 0;
+  }
+
+  @include r ($md) {
+    padding: 40px 0;
+  }
+
+  @include r ($sm) {
+    padding: 20px 0;
+  }
+
+  @include r ($xs) {
+    padding: 10px 0;
+  }
+
+  &__titlebox {
+    text-align: center;
+    margin-bottom: 42px;
+  }
+
+  .subtitle {
+    max-width: 100%;
+  }
+}
+//*-------------PRODUCTS-------------
+
+//*-------------PRODUCT-CARD---------
+.catalog {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+
+    @include r ($lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include r ($md) {
+      grid-gap: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @include r ($sm) {
+      grid-gap: 10px;
+    }
+  }
+
+  &__item {
+    max-width: 447px;
+    background-color: #F9F8F8;
+    border-radius: 30px;
+    border: 1px solid transparent;
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: $defaultColor;
+    }
+  }
+}
+
+.product-card {
+  position: relative;
+
+  &__box {
+    padding: 67px 30px 20px 30px;
+
+    @include r ($md) {
+      padding: 40px 30px 30px;
+    }
+
+    @include r ($sm) {
+      padding: 40px 20px 20px;
+    }
+  }
+
+  &__mark {
+    padding: 5px 20px;
+    position: absolute;
+    background-color: $defaultColor;
+    color: $white;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 8px;
+    top: 30px;
+    left: 30px;
+
+    @include r ($md) {
+      top: 20px;
+      left: 20px;
+      padding: 5px 15px;
+    }
+  }
+
+  &__img {
+    margin-bottom: 20px;
+
+    @include r ($md) {
+      margin-bottom: 10px;
+    }
+
+    @include r ($sm) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__heading {
+    font-family: $font-Roboto;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.6;
+    padding-bottom: 11px;
+    border-bottom: 1px solid #D4D4D4;
+
+    @include r ($sm) {
+      font-size: 20px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    padding-top: 9px;
+
+    @include r ($xl) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__offers {
+    display: flex;
+    margin-right: auto;
+
+    @include r ($xl) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__price {
+    &--old {
+      font-weight: 400;
+      margin-right: 10px;
+      text-decoration-line: line-through;
+      color: #B8B8B8;
+    }
+
+    &--new {
+      font-weight: 700;
+    }
+  }
+}
+//*------------PRODUCT-CARD-----------
+
+//* -----------REVIEWS----------------
+.reviews {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    background-image: url('../images/reviews-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  &__titlebox {
+    padding-top: 130px;
+    text-align: center;
+
+    @include r ($xl) {
+      padding-top: 80px;
+    }
+
+    @include r ($lg) {
+      padding-top: 60px;
+    }
+
+    @include r ($md) {
+      padding-top: 40px;
+    }
+
+    @include r ($sm) {
+      padding-top: 20px;
+    }
+
+    @include r ($xs) {
+      padding-top: 10px;
+    }
+  }
+
+  .subtitle {
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+
+  &__inner {
+    margin: 0 auto;
+    max-width: 966px;
+    padding: 60px 0 95px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 2px solid #E0E0E0;
+    margin-bottom: 100px;
+
+    @include r ($lg) {
+      padding: 60px 0;
+      margin-bottom: 60px;
+    }
+
+    @include r ($md) {
+      padding: 40px 0;
+      margin-bottom: 40px;
+    }
+
+    @include r ($sm) {
+      padding: 20px 0;
+      margin-bottom: 20px;
+    }
+
+    @include r ($xs) {
+      padding: 10px 0;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__img {
+    border-radius: 50%;
+    margin-bottom: 18px;
+  }
+
+  .star {
+    margin-bottom: 30px;
+
+    @include r ($sm) {
+      margin-bottom: 15px;
+    }
+
+    @include r ($xs) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__text {
+    max-width: 950px;
+    text-align: center;
+    margin-bottom: 23px;
+
+    @include r ($sm) {
+      margin-bottom: 15px;
+    }
+
+    @include r ($xs) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__name {
+    font-family: $font-Roboto;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.3;
+  }
+
+  &__status {
+    display: block;
+    font-size: 14px;
+    line-height: 1.9;
+    color: #525C60;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 150px;
+
+    @include r ($xl) {
+      padding-bottom: 80px;
+    }
+
+    @include r ($lg) {
+      padding-bottom: 60px;
+    }
+
+    @include r ($md) {
+      padding-bottom: 40px;
+    }
+
+    @include r ($sm) {
+      padding-bottom: 20px;
+    }
+
+    @include r ($xs) {
+      padding-bottom: 10px;
+    }
+  }
+
+  &__item {
+    width: 250px;
+    height: 250px;
+    border: 5px solid $titleColor;
+    border-radius: 50%;
+    background-color: #F1F1F1;
+
+    &:not(:last-child) {
+      margin-right: 26px;
+    }
+
+    @include r ($xl) {
+      &:not(:last-child) {
+        margin-bottom: 26px;
+      }
+    }
+
+    @include r ($sm) {
+      width: 200px;
+      height: 200px;
+
+      &:not(:last-child) {
+        margin-right: 15px;
+        margin-bottom: 15px;
+      }
+    }
+
+    @include r ($xs) {
+      width: 180px;
+      height: 180px;
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__item-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 240px;
+    height: 240px;
+    border: 5px solid $white;
+    border-radius: 50%;
+
+    @include r ($sm) {
+      width: 190px;
+      height: 190px;
+    }
+
+    @include r ($xs) {
+      width: 170px;
+      height: 170px;
+    }
+  }
+
+  &__heading {
+    font-family: $font-Roboto;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 1.3;
+  }
+
+  &__subtitle {
+    font-weight: 700;
+  }
+}
+//* -----------REVIEWS----------------
+
+//* -----------OFFERS----------------- 
+.offers {
+  padding: 140px 0;
+  background-color: $defaultColor;
+
+  @include r ($xl) {
+    padding: 80px 0;
+  }
+
+  @include r ($lg) {
+    padding: 60px 0;
+  }
+
+  @include r ($md) {
+    padding: 40px 0;
+  }
+
+  @include r ($sm) {
+    padding: 20px 0;
+  }
+
+  @include r ($xs) {
+    padding: 10px 0;
+  }
+
+  .subtitle {
+    color: $white;
+    margin-bottom: 0;
+
+    @include r ($md) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+
+    @include r ($md) {
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    @include r ($sm) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .catalog {
+    &__list {
+      @include r ($md) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+}
+//* -----------OFFERS----------------- 
+
+//* -----------ECOL-------------------
+.ecol {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+
+    @include r ($xl) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__img {
+    width: 50%;
+    height: 704px;
+
+    @include r ($xl) {
+      width: 100%;
+    }
+
+    @include r ($lg) {
+      height: auto;
+    }
+  }
+
+  &__content-inner {
+    margin-left: -60px;
+    padding: 50px;
+    background-color: $white;
+    max-width: 760px;
+    height: 623px;
+    border-radius: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+
+    @include r ($xl) {
+      margin: 0;
+      box-shadow: none;
+      max-width: 100%;
+      border-radius: 0;
+      height: auto;
+    }
+
+    @include r ($lg) {
+      padding: 40px;
+    }
+
+    @include r ($md) {
+      padding: 30px;
+    }
+
+    @include r ($sm) {
+      padding: 20px;
+    }
+
+    @include r ($xs) {
+      padding: 10px;
+    }
+  }
+
+  .subtitle {
+    max-width: 350px;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+
+    @include r ($md) {
+      margin-bottom: 20px;
+    }
+
+    @include r ($sm) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__heading {
+    font-family: $font-Roboto;
+    font-weight: 700;
+    font-size: 23px;
+  }
+
+  &__text {
+    letter-spacing: normal;
+    line-height: 1.7;
+  }
+}
+//* -----------ECOL-------------------
+
+//* -----------FEATURES---------------
+.features {
+  padding: 140px 0;
+  background-color: #EFF6F1;
+
+  @include r ($xl) {
+    padding: 80px 0;
+  }
+
+  @include r ($lg) {
+    padding: 60px 0;
+  }
+
+  @include r ($md) {
+    padding: 40px 0;
+  }
+
+  @include r ($sm) {
+    padding: 20px 0;
+  }
+
+  @include r ($xs) {
+    padding: 10px 0;
+  }
+
+  &__list {
+    display: flex;
+
+    @include r ($xl) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    width: 460px;
+    height: 560px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+
+    @include r ($xl) {
+      width: 100%;
+      background-size: cover;
+      background-position: center center;
+
+      &:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
+    }
+
+    @include r ($lg) {
+      height: 500px;
+    }
+
+    @include r ($md) {
+      height: 460px;
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+
+    @include r ($sm) {
+      height: 400px;
+
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+
+    @include r ($xs) {
+      height: 350px;
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &__link {
+    padding: 30px 80px;
+    background-color: $white;
+    border-radius: 20px;
+    font-family: $font-Roboto;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 1.4;
+    transition: all 0.4s;
+
+    &:hover {
+      background-color: #EFF6F1;
+    }
+
+    &:active {
+      background-color: $defaultColor;
+      color: $white;
+    }
+
+    @include r ($md) {
+      padding: 25px 70px;
+    }
+
+    @include r ($sm) {
+      padding: 20px 50px;
+    }
+
+    @include r ($xs) {
+      font-size: 22px;
+    }
+  }
+}
+//* -----------FEATURES---------------
+
+//* -----------NEWS-------------------
+.news {
+  padding: 130px 0 50px;
+
+  @include r ($xl) {
+    padding: 80px 0;
+  }
+
+  @include r ($lg) {
+    padding: 60px 0;
+  }
+
+  @include r ($md) {
+    padding: 40px 0;
+  }
+
+  @include r ($sm) {
+    padding: 20px 0;
+  }
+
+  @include r ($xs) {
+    padding: 10px 0;
+  }
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 100px;
+
+    @include r ($xl) {
+      margin-bottom: 80px;
+    }
+
+    @include r ($lg) {
+      margin-bottom: 50px;
+    }
+
+    @include r ($md) {
+      margin-bottom: 30px;
+    }
+
+    @include r ($sm) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .subtitle {
+    margin-bottom: 0;
+    max-width: 100%;
+
+    @include r ($xl) {
+      margin-bottom: 30px;
+    }
+
+    @include r ($md) {
+      margin-bottom: 20px;
+    }
+
+    @include r ($sm) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    margin-bottom: 150px;
+
+    @include r ($xl) {
+      display: block;
+      margin-bottom: 80px;
+    }
+
+    @include r ($lg) {
+      margin-bottom: 60px;
+    }
+
+    @include r ($md) {
+      margin-bottom: 40px;
+    }
+
+    @include r ($sm) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+
+    @include r ($xl) {
+      display: block;
+
+      &:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 60px;
+      }
+    }
+
+    @include r ($md) {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+
+    @include r ($sm) {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__banner {
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 30px;
+  }
+
+  &__banner-box {
+    width: 100%;
+    height: 320px;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include r ($xl) {
+      padding: 30px;
+    }
+
+    @include r ($md) {
+      height: auto;
+      padding: 50px;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  &__title {
+    font-family: $font-Roboto;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 1.2;
+    color: $white;
+    max-width: 370px;
+
+    @include r ($xl) {
+      font-size: 44px;
+    }
+
+    @include r ($md) {
+      max-width: 100%;
+      margin-bottom: 15px;
+    }
+
+    @include r ($sm) {
+      font-size: 36px;
+      text-align: center;
+    }
+  }
+
+  &__form {
+    @include r ($lg) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__input {
+    background-color: $white;
+    line-height: 1.6;
+    color: #525C60;
+    padding: 25px 100px 25px 30px;
+    border: 1px solid #CCCCCC;
+    border-radius: 16px;
+    margin-right: 10px;
+
+    @include r ($lg) {
+      padding: 25px;
+      margin-bottom: 10px;
+      margin-right: 0;
+    }
+
+    @include r ($md) {
+      padding: 20px;
+    }
+
+    @include r ($sm) {
+      padding: 15px;
+    }
+  }
+}
+
+.news-card {
+  &__wrapper {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 516px;
+    border-radius: 30px;
+
+    @include r ($lg) {
+      height: 480px;
+    }
+
+    @include r ($md) {
+      height: 440px;
+    }
+
+    @include r ($sm) {
+      height: 420px;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    margin: 0 30px;
+    padding: 50px;
+    background-color: $white;
+    border-radius: 30px;
+    box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.14);
+    bottom: -270px;
+
+    @include r ($lg) {
+      bottom: -220px;
+    }
+
+    @include r ($md) {
+      bottom: -150px;
+      padding: 35px;
+      margin: 0 25px;
+    }
+
+    @include r ($sm) {
+      bottom: -100px;
+      padding: 25px;
+      margin: 0 20px;
+    }
+
+    @include r ($xs) {
+      bottom: -70px;
+      padding: 15px;
+    }
+  }
+
+  &__author-link {
+    font-size: 18px;
+    font-family: $font-Roboto;
+    font-weight: 400;
+    line-height: 1.4;
+    padding-left: 28px;
+    margin-bottom: 9px;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: url('../images/icons/user.svg');
+      background-repeat: no-repeat;
+      width: 18px;
+      height: 20px;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  &__heading {
+    font-family: $font-Roboto;
+    letter-spacing: -0.8px;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 38px;
+
+    @include r ($xl) {
+      letter-spacing: normal;
+    }
+
+    @include r ($md) {
+      margin-bottom: 25px;
+    }
+
+    @include r ($sm) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__text {
+    color: #525C60;
+    margin-bottom: 12px;
+  }
+}
+//* -----------NEWS-------------------
+
+//? -----------FOOTER-----------------
+.footer {
+  .logo {
+    display: block;
+    margin-bottom: 44px;
+  }
+
+  &__wrapper {
+    padding: 130px 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+
+    @include r ($xl) {
+      padding: 80px 0;
+    }
+
+    @include r ($lg) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      padding: 60px 0;
+    }
+
+    @include r ($md) {
+      padding: 40px 0;
+    }
+
+    @include r ($sm) {
+      padding: 20px 0;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    @include r ($xs) {
+      padding: 10px 0;
+    }
+  }
+
+  &__column {
+    @include r ($lg) {
+      padding: 15px;
+
+      &:nth-child(1) {
+        order: 2;
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        border-left: 1px solid #D5D5D5;
+      }
+
+      &:nth-child(2) {
+        order: 1;
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+      }
+
+      &:nth-child(3) {
+        order: 2;
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        border-right: 1px solid #D5D5D5;
+      }
+    }
+
+    @include r ($sm) {
+      padding: 10px;
+      text-align: center;
+
+      &:nth-child(1) {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+        border-left: none;
+        border-bottom: 1px solid #D5D5D5;
+      }
+
+      &:nth-child(3) {
+        grid-column: 1 / 3;
+        grid-row: 3 / 4;
+        border-right: none;
+      }
+    }
+  }
+
+  &__heading {
+    font-family: $font-Roboto;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1.4;
+    margin-bottom: 30px;
+
+    &--first {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    @include r ($sm) {
+      display: block;
+    }
+  }
+
+  &__topic {
+    font-weight: 700;
+    margin-bottom: 5px;
+    line-height: 1.3;
+    color: #525C60;
+  }
+
+  &__reference,
+  &__topic {
+    display: flex;
+    justify-content: flex-end;
+
+    @include r ($sm) {
+      display: block;
+    }
+  }
+
+  &__element {
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__link,
+  &__reference {
+    line-height: 1.6;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $titleColor;
+    }
+
+    &:focus {
+      text-decoration: underline;
+    }
+
+    &:active {
+      color: #c4c4c4;
+    }
+  }
+
+  &__box {
+    padding: 0 50px 85px;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-left: 1px solid #D5D5D5;
+    border-right: 1px solid #D5D5D5;
+
+    @include r ($lg) {
+      padding: 0 0 45px 0;
+      border-left: none;
+      border-right: none;
+      margin: 0;
+      border-bottom: 1px solid #D5D5D5;
+    }
+  }
+
+  &__text {
+    max-width: 570px;
+    margin-bottom: 60px;
+  }
+
+  &__copy {
+    text-align: center;
+    border-top: 1px solid #D5D5D5;
+    padding: 24px 0;
+  }
+}
+
+.social {
+  display: flex;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #EFF6F1;
+    transition: all 0.5s;
+
+    &:hover,
+    &:focus {
+      background-color: #fff;
+      border: 1px solid #c4c4c4;
+    }
+
+    &:active {
+      background-color: #e7e7e7;
+    }
+
+    &,
+    path {
+      transition: all 0.5s;
+
+      &:hover path {
+        fill: #000;
+      }
+    }
+
+  }
+
+
+
+
+}
+//? -----------FOOTER-----------------

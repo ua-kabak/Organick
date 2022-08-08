@@ -1,24 +1,27 @@
-$accent: #fe3e57;
-$default: #8d8d8d;
-$title: #29282d;
-$bg: #f6f6f6;
+$defaultColor:  #274C5B;
+$titleColor:    #7EB693;
+$btnsColor:     #EFD372;
+$bgColor:       #F9F8F8;
+$white:         #FFFFFF;
 
-%quicksand-400{
-    font-family: 'Quicksand-Regular', sans-serif;
-    font-weight: 400;
-}
+$font-OpenSans: 'OpenSans',
+sans-serif;
+$font-Roboto: 'Roboto',
+sans-serif;
+$font-Yellowtail: 'Yellowtail',
+cursive;
 
-%quicksand-500 {
-  font-family: 'Quicksand-Medium', sans-serif;
-  font-weight: 500;
-}
+$xl:  1200;
+$lg:  992;
+$md:  768;
+$sm:  576;
+$xs:  375;
 
-%roboto-400 {
-  font-family: 'Roboto-Regular', sans-serif;
-  font-weight: 400;
-}
-
-%roboto-700 {
-  font-family: 'Roboto-Bold', sans-serif;
-  font-weight: 700;
+%checkbox-hidden,
+%radio-hidden {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  position: absolute;
 }
