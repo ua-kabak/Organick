@@ -1,5 +1,4 @@
-body,
-html {
+body {
   height: 100%;
 }
 
@@ -56,6 +55,8 @@ html {
   @include r ($xs) {
     font-size: 28px;
   }
+
+  @include line-clamp(36, 1.8, 2);
 }
 
 .subtitle {
@@ -79,6 +80,8 @@ html {
   @include r ($xs) {
     font-size: 28px;
   }
+
+  @include line-clamp(45, 1.2, 3);
 }
 
 .button {
@@ -90,10 +93,9 @@ html {
   font-weight: 400;
   font-size: 19px;
   line-height: 1.7;
-  transition: all 0.3s;
+  transition: all 0.5s ease-in-out;
   border: 1px solid transparent;
   height: 100%;
-
 
   &::before {
     content: '';

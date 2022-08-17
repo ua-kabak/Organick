@@ -22,18 +22,27 @@
       <div class="header__wrapper">
 
         <a class="logo" href="#footer">
-          <img class="logo__img" src="images/icons/logo.svg" alt="logo">
-          <img class="logo__img--mobile" src="images/icons/logo-mobile.svg" alt="logo">
+          <picture>
+            <source srcset="images/icons/logo-mobile.svg" media="(max-width: 576px)">
+            <img class="logo__img" src="images/icons/logo.svg" alt="logo">
+          </picture>
         </a>
 
-        <button class="header__btn" type="button">
-          <span class="header__line"></span>
-        </button>
-
         <nav class="nav">
+          <a class="nav__logo" href="#footer">
+            <img class="nav__logo-img" src="images/icons/logo-white.svg" alt="logo" width="37" height="54">
+          </a>
           <ul class="nav__list">
+            <li class="nav__item-logo">
+              <a class="nav__logo" href="#footer">
+                <img class="nav__logo-img" src="images/icons/logo-white.svg" alt="logo" width="37" height="54">
+              </a>
+            </li>
             <li class="nav__item">
               <a class="nav__link" href="#">
+                Home
+              </a>
+              <a class="nav__link nav__link--mobile" href="#">
                 Home
               </a>
             </li>
@@ -41,9 +50,15 @@
               <a class="nav__link" href="#about">
                 About Us
               </a>
+              <a class="nav__link nav__link--mobile" href="#about">
+                About Us
+              </a>
             </li>
             <li class="nav__item">
               <a class="nav__link" href="#">
+                Shop
+              </a>
+              <a class="nav__link nav__link--mobile" href="#">
                 Shop
               </a>
             </li>
@@ -51,9 +66,15 @@
               <a class="nav__link" href="#">
                 Pages
               </a>
+              <a class="nav__link nav__link--mobile" href="#">
+                Pages
+              </a>
             </li>
             <li class="nav__item">
               <a class="nav__link" href="#footer">
+                Contact Us
+              </a>
+              <a class="nav__link nav__link--mobile" href="#footer">
                 Contact Us
               </a>
             </li>
@@ -62,13 +83,29 @@
 
         <div class="cart">
           <button class="cart__btn" type="button">
-            <img class="cart__img" src="images/icons/cart.svg" alt="cart" width="26" height="24">
+            <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M10.7779 23.0001C11.4529 23.0001 12.0001 22.4529 12.0001 21.7779C12.0001 21.1029 11.4529 20.5557 10.7779 20.5557C10.1029 20.5557 9.55566 21.1029 9.55566 21.7779C9.55566 22.4529 10.1029 23.0001 10.7779 23.0001Z"
+                fill="fff" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M19.3336 23.0001C20.0086 23.0001 20.5558 22.4529 20.5558 21.7779C20.5558 21.1029 20.0086 20.5557 19.3336 20.5557C18.6585 20.5557 18.1113 21.1029 18.1113 21.7779C18.1113 22.4529 18.6585 23.0001 19.3336 23.0001Z"
+                fill="fff" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M1 1H4.7819L7.61832 17.0731H22.7459" stroke="white" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path
+                d="M7.11121 13.1837L22.3584 13.2907C22.4677 13.2908 22.5737 13.2529 22.6583 13.1837C22.7429 13.1144 22.8008 13.0179 22.8223 12.9107L24.5241 4.40145C24.5378 4.33283 24.5362 4.26203 24.5192 4.19414C24.5023 4.12625 24.4705 4.06297 24.4261 4.00886C24.3817 3.95476 24.3259 3.91118 24.2626 3.88128C24.1993 3.85138 24.1302 3.83589 24.0602 3.83594H5.56738"
+                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
           </button>
 
           <span class="cart__span">
             Cart 0
           </span>
         </div>
+
+        <button class="header__btn" type="button">
+          <span class="header__line"></span>
+        </button>
 
       </div>
     </div>
@@ -79,13 +116,13 @@
     <section class="top">
       <div class="container">
 
-        <div class="top__inner">
-          <h2 class="title">
+        <div class="top__inner" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
+          <h1 class="title">
             Made with nature
-          </h2>
-          <h1 class="subtitle">
-            Welcome to the world of nature and organic.
           </h1>
+          <h2 class="subtitle">
+            Welcome to the world of nature and organic.
+          </h2>
           <a class="button" href="#">
             Explore Now
           </a>
@@ -98,7 +135,8 @@
       <div class="container">
 
         <div class="banners__items">
-          <div class="banners__item banners__item--fruits" style="background-image: url('../images/offers/1.jpg');">
+          <div class="banners__item banners__item--fruits" data-aos="fade-right" data-aos-delay="200"
+            data-aos-duration="1000" style="background-image: url('../images/offers/1.jpg');">
             <div class="banners__item-inner">
               <h3 class="title">
                 Natural!!
@@ -108,7 +146,8 @@
               </h4>
             </div>
           </div>
-          <div class="banners__item banners__item--vegatables" style="background-image: url('../images/offers/2.jpg');">
+          <div class="banners__item banners__item--vegatables" data-aos="fade-left" data-aos-delay="200"
+            data-aos-duration="1000" style="background-image: url('../images/offers/2.jpg');">
             <div class="banners__item-inner">
               <h3 class="title">
                 Offer!!
@@ -128,9 +167,9 @@
 
         <div class="about__wrapper">
 
-          <img class="about__img" src="images/about-img.svg" alt="beautiful fruits">
-
-          <div class="about__content">
+          <img class="about__img" src="images/about-img.svg" alt="beautiful fruits" data-aos="fade-right"
+            data-aos-delay="200" data-aos-duration="1000">
+          <div class="about__content" data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">
             <h3 class="title">
               About Us
             </h3>
@@ -177,7 +216,7 @@
     <section class="products">
       <div class="container">
 
-        <div class="products__titlebox">
+        <div class="products__titlebox" data-aos="fade-up" data-aos-delay="100" data-aos-duration="600">
           <h3 class="title">
             Organic
           </h3>
@@ -188,7 +227,7 @@
         <div class="catalog">
 
           <ul class="catalog__list">
-            <li class="catalog__item">
+            <li class="catalog__item" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
               <article class="product-card">
                 <a class="product-card__link" href="#">
                   <div class="product-card__box">
@@ -212,7 +251,7 @@
                 </a>
               </article>
             </li>
-            <li class="catalog__item">
+            <li class="catalog__item" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
               <article class="product-card">
                 <a class="product-card__link" href="#">
                   <div class="product-card__box">
@@ -236,7 +275,7 @@
                 </a>
               </article>
             </li>
-            <li class="catalog__item">
+            <li class="catalog__item" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
               <article class="product-card">
                 <a class="product-card__link" href="#">
                   <div class="product-card__box">
@@ -260,7 +299,7 @@
                 </a>
               </article>
             </li>
-            <li class="catalog__item">
+            <li class="catalog__item" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
               <article class="product-card">
                 <a class="product-card__link" href="#">
                   <div class="product-card__box">
@@ -284,7 +323,7 @@
                 </a>
               </article>
             </li>
-            <li class="catalog__item">
+            <li class="catalog__item" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
               <article class="product-card">
                 <a class="product-card__link" href="#">
                   <div class="product-card__box">
@@ -308,7 +347,7 @@
                 </a>
               </article>
             </li>
-            <li class="catalog__item">
+            <li class="catalog__item" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
               <article class="product-card">
                 <a class="product-card__link" href="#">
                   <div class="product-card__box">
@@ -342,7 +381,7 @@
     <section class="reviews">
       <div class="container">
 
-        <div class="reviews__titlebox">
+        <div class="reviews__titlebox" data-aos="zoom-out" data-aos-delay="300" data-aos-duration="1000">
           <h3 class="title">
             Testimonial
           </h3>
@@ -351,7 +390,7 @@
           </h4>
         </div>
 
-        <div class="reviews__inner">
+        <div class="reviews__inner" data-aos="zoom-out" data-aos-delay="300" data-aos-duration="1000">
           <img class="reviews__img" src="images/reviews/1.jpg" alt="Sara Taylor" width="115" height="115">
           <div class="star"></div>
           <p class="reviews__text">
@@ -367,7 +406,7 @@
         </div>
 
         <ul class="reviews__list">
-          <li class="reviews__item">
+          <li class="reviews__item" data-aos="zoom-in-up" data-aos-delay="200" data-aos-duration="1000">
             <div class="reviews__item-box">
               <h5 class="reviews__heading">
                 100%
@@ -377,7 +416,7 @@
               </h6>
             </div>
           </li>
-          <li class="reviews__item">
+          <li class="reviews__item" data-aos="zoom-in-down" data-aos-delay="200" data-aos-duration="1000">
             <div class="reviews__item-box">
               <h5 class="reviews__heading">
                 285
@@ -387,7 +426,7 @@
               </h6>
             </div>
           </li>
-          <li class="reviews__item">
+          <li class="reviews__item" data-aos="zoom-in-up" data-aos-delay="200" data-aos-duration="1000">
             <div class="reviews__item-box">
               <h5 class="reviews__heading">
                 385+
@@ -397,7 +436,7 @@
               </h6>
             </div>
           </li>
-          <li class="reviews__item">
+          <li class="reviews__item" data-aos="zoom-in-down" data-aos-delay="200" data-aos-duration="600">
             <div class="reviews__item-box">
               <h5 class="reviews__heading">
                 25+
@@ -417,7 +456,7 @@
 
         <div class="offers__inner">
 
-          <div class="offers__titlebox">
+          <div class="offers__titlebox" data-aos="fade-right">
             <h3 class="title">
               Offer Products
             </h3>
@@ -426,15 +465,15 @@
             </h4>
           </div>
 
-          <a class="button" href="#">
+          <button class="button button--offers" type="button" data-aos="fade-left">
             View All products
-          </a>
+          </button>
         </div>
 
         <div class="catalog">
 
           <ul class="catalog__list">
-            <li class="catalog__item">
+            <li class="catalog__item" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
               <article class="product-card">
                 <a class="product-card__link" href="#">
                   <div class="product-card__box">
@@ -458,7 +497,7 @@
                 </a>
               </article>
             </li>
-            <li class="catalog__item">
+            <li class="catalog__item" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
               <article class="product-card">
                 <a class="product-card__link" href="#">
                   <div class="product-card__box">
@@ -482,7 +521,82 @@
                 </a>
               </article>
             </li>
-            <li class="catalog__item">
+            <li class="catalog__item" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
+              <article class="product-card">
+                <a class="product-card__link" href="#">
+                  <div class="product-card__box">
+                    <span class="product-card__mark">
+                      Millets
+                    </span>
+
+                    <img class="product-card__img" src="images/products/6.jpg" alt="Brown Hazelnut">
+                    <h5 class="product-card__heading">
+                      Brown Hazelnut
+                    </h5>
+                    <div class="product-card__bottom">
+                      <div class="product-card__offers">
+                        <span class="product-card__price product-card__price--old">$ 43.00 USD</span>
+                        <span class="product-card__price product-card__price--new">$ 34.00 USD</span>
+                      </div>
+
+                      <div class="star">*****</div>
+                    </div>
+                  </div>
+                </a>
+              </article>
+            </li>
+            <li class="catalog__item catalog__item--hidden" data-aos="zoom-in" data-aos-delay="200"
+              data-aos-duration="1000">
+              <article class="product-card">
+                <a class="product-card__link" href="#">
+                  <div class="product-card__box">
+                    <span class="product-card__mark">
+                      Vegetable
+                    </span>
+
+                    <img class="product-card__img" src="images/products/4.jpg" alt="Vegan Red Tomato">
+                    <h5 class="product-card__heading">
+                      Vegan Red Tomato
+                    </h5>
+                    <div class="product-card__bottom">
+                      <div class="product-card__offers">
+                        <span class="product-card__price product-card__price--old">$ 14.00 USD</span>
+                        <span class="product-card__price product-card__price--new">$ 9.37 USD</span>
+                      </div>
+
+                      <div class="star">*****</div>
+                    </div>
+                  </div>
+                </a>
+              </article>
+            </li>
+            <li class="catalog__item catalog__item--hidden" data-aos="zoom-in" data-aos-delay="200"
+              data-aos-duration="1000">
+              <article class="product-card">
+                <a class="product-card__link" href="#">
+                  <div class="product-card__box">
+                    <span class="product-card__mark">
+                      Fruits
+                    </span>
+
+                    <img class="product-card__img" src="images/products/5.jpg" alt="Organic Almonds">
+                    <h5 class="product-card__heading">
+                      Organic Almonds
+                    </h5>
+                    <div class="product-card__bottom">
+                      <div class="product-card__offers">
+                        <span class="product-card__price product-card__price--old">$ 21.00 USD</span>
+                        <span class="product-card__price product-card__price--new">$ 18.00 USD</span>
+                      </div>
+
+                      <div class="star">*****</div>
+                    </div>
+                  </div>
+                </a>
+              </article>
+            </li>
+            <li class="catalog__item catalog__item--hidden" data-aos="zoom-in" data-aos-delay="200"
+              data-aos-duration="1000">
               <article class="product-card">
                 <a class="product-card__link" href="#">
                   <div class="product-card__box">
@@ -514,8 +628,9 @@
 
     <section class="ecol">
       <div class="ecol__wrapper">
-        <img class="ecol__img" src="images/eco-img.jpg" alt="beautiful greenery">
-        <div class="ecol__content">
+        <img class="ecol__img" src="images/eco-img.jpg" alt="beautiful greenery" data-aos="fade-right"
+          data-aos-delay="300" data-aos-duration="1000">
+        <div class="ecol__content" data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">
           <div class="ecol__content-inner">
             <h3 class="title">
               Eco Friendly
@@ -564,17 +679,20 @@
       <div class="container container--large">
 
         <ul class="features__list">
-          <li class="features__item" style="background-image: url('../images/features/1.jpg');">
+          <li class="features__item" style="background-image: url('../images/features/1.jpg');" data-aos="fade-right"
+            data-aos-delay="300" data-aos-duration="1000">
             <a class="features__link" href="#">
               Fruit Juice
             </a>
           </li>
-          <li class="features__item" style="background-image: url('../images/features/2.jpg');">
+          <li class="features__item" style="background-image: url('../images/features/2.jpg');" data-aos="zoom-in"
+            data-aos-delay="300" data-aos-duration="1000">
             <a class="features__link" href="#">
               Organic Food
             </a>
           </li>
-          <li class="features__item" style="background-image: url('../images/features/3.jpg');">
+          <li class="features__item" style="background-image: url('../images/features/3.jpg');" data-aos="fade-left"
+            data-aos-delay="300" data-aos-duration="1000">
             <a class="features__link" href="#">
               Nuts Cookies
             </a>
@@ -589,7 +707,7 @@
 
         <div class="news__inner">
 
-          <div class="news__titlebox">
+          <div class="news__titlebox" data-aos="fade-right">
             <h3 class="title">
               News
             </h3>
@@ -598,60 +716,100 @@
             </h4>
           </div>
 
-          <a class="button button--news" href="#">
+          <button class="button button--news" type="button" data-aos="fade-left">
             More News
-          </a>
+          </button>
         </div>
 
         <ul class="news__list">
-          <li class="news__item">
+          <li class="news__item" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
             <article class="news-card">
               <div class="news-card__wrapper" style="background-image: url('../images/news/1.jpg');">
                 <div class="news-card__inner">
-                  <a class="news-card__link" href="#">
-                    <a class="news-card__author-link" href="#">
-                      Kristina Castle
-                    </a>
-                    <h5 class="news-card__heading">
-                      Everything You Need to Know About Organic
-                    </h5>
-                    <p class="news-card__text">
-                      Organic farming is the only way that you still can experience the real world.
-                    </p>
-                    <a class="button button--small" href="#">
-                      View More
-                    </a>
+                  <a class="news-card__author-link" href="#">
+                    Kristina Castle
+                  </a>
+                  <h5 class="news-card__heading">
+                    Everything You Need to Know About Organic
+                  </h5>
+                  <p class="news-card__text">
+                    Organic farming is the only way that you still can experience the real world.
+                  </p>
+                  <a class="button button--small" href="#">
+                    View More
                   </a>
                 </div>
               </div>
             </article>
           </li>
 
-          <li class="news__item">
+          <li class="news__item" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
             <article class="news-card">
               <div class="news-card__wrapper" style="background-image: url('../images/news/2.jpg');">
                 <div class="news-card__inner">
-                  <a class="news-card__link" href="#">
-                    <a class="news-card__author-link" href="#">
-                      Alex Louis
-                    </a>
-                    <h5 class="news-card__heading">
-                      Organic Fruits: Surprising Benefits and Facts
-                    </h5>
-                    <p class="news-card__text">
-                      The world of nature has grown on the principles of health, ecology, and care.
-                    </p>
-                    <a class="button button--small" href="#">
-                      View More
-                    </a>
+                  <a class="news-card__author-link" href="#">
+                    Alex Louis
+                  </a>
+                  <h5 class="news-card__heading">
+                    Organic Fruits: Surprising Benefits and Facts
+                  </h5>
+                  <p class="news-card__text">
+                    The world of nature has grown on the principles of health, ecology, and care.
+                  </p>
+                  <a class="button button--small" href="#">
+                    View More
                   </a>
                 </div>
               </div>
             </article>
           </li>
+
+          <li class="news__item news__item--hidden">
+            <article class="news-card">
+              <div class="news-card__wrapper" style="background-image: url('../images/news/2.jpg');">
+                <div class="news-card__inner">
+                  <a class="news-card__author-link" href="#">
+                    Alex Louis
+                  </a>
+                  <h5 class="news-card__heading">
+                    Organic Fruits: Surprising Benefits and Facts
+                  </h5>
+                  <p class="news-card__text">
+                    The world of nature has grown on the principles of health, ecology, and care.
+                  </p>
+                  <a class="button button--small" href="#">
+                    View More
+                  </a>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <li class="news__item news__item--hidden">
+            <article class="news-card">
+              <div class="news-card__wrapper" style="background-image: url('../images/news/1.jpg');">
+                <div class="news-card__inner">
+                  <a class="news-card__author-link" href="#">
+                    Kristina Castle
+                  </a>
+                  <h5 class="news-card__heading">
+                    Everything You Need to Know About Organic
+                  </h5>
+                  <p class="news-card__text">
+                    Organic farming is the only way that you still can experience the real world.
+                  </p>
+                  <a class="button button--small" href="#">
+                    View More
+                  </a>
+                </div>
+              </div>
+            </article>
+          </li>
+
         </ul>
 
-        <div class="news__banner" style="background-image: url('../images/banner-img.jpg');">
+        <div class="news__banner" style="background-image: url('../images/banner-img.jpg');" data-aos="fade-up"
+          data-aos-delay="300" data-aos-duration="1000">
           <div class="news__banner-box">
             <h5 class="news__title">
               Subscribe our Newsletter
@@ -676,7 +834,7 @@
     <div class="container">
 
       <div class="footer__wrapper">
-        <div class="footer__column">
+        <div class="footer__column" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">
           <h3 class="footer__heading footer__heading--first">
             Contact Us
           </h3>
@@ -709,7 +867,7 @@
             </li>
           </ul>
         </div>
-        <div class="footer__column">
+        <div class="footer__column" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000">
           <div class="footer__box">
             <a class="logo" href="#header">
               <img class="logo__img" src="images/icons/logo.svg" alt="logo">
@@ -768,7 +926,7 @@
             </ul>
           </div>
         </div>
-        <div class="footer__column">
+        <div class="footer__column" data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">
           <h3 class="footer__heading">
             Utility Pages
           </h3>
@@ -809,7 +967,8 @@
     </div>
   </footer>
 
-  <script src="js/main.min.js"></script>
+  <script src="js/main.min.js">
+  </script>
 </body>
 
 </html>
